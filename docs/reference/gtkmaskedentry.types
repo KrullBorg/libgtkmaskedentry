@@ -1,0 +1,4 @@
+#include <gtkmaskedentry.h>
+
+gtk_masked_entry_get_type
+gtk_cell_renderer_masked_get_type

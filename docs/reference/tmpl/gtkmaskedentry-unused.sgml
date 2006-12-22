@@ -1,0 +1,14 @@
+<!-- ##### STRUCT GtkCellRendererMaskedClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### STRUCT GtkMaskedEntryClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+

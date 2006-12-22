@@ -1,0 +1,69 @@
+<!-- ##### SECTION Title ##### -->
+GtkMaskedEntry
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT GtkMaskedEntry ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION gtk_masked_entry_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION gtk_masked_entry_new_with_mask ##### -->
+<para>
+
+</para>
+
+@mask: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gtk_masked_entry_set_mask ##### -->
+<para>
+
+</para>
+
+@masked_entry: 
+@mask: 
+
+
+<!-- ##### FUNCTION gtk_masked_entry_get_mask ##### -->
+<para>
+
+</para>
+
+@masked_entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION gtk_masked_entry_get_text ##### -->
+<para>
+
+</para>
+
+@masked_entry: 
+@Returns: 
+
+

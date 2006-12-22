@@ -1,0 +1,18 @@
+2006-01-12
+	* added constructor gtk_cell_renderer_masked_new_with_mask
+
+2006-01-11
+	* added mask "#" for alphanumeric character
+
+2006-01-09
+	* added GtkCellRendererMasked to use GtkMaskedEntry into GtkTreeView
+
+2005-12-08
+	* changed autotools configure files for compiling also on Win32
+	* changed autotools configure files for cross compiling
+
+2005-09-25
+	* added support of gtk-doc
+
+2005-09-01
+	* free allocated memory (thanks to Bruno Orcia Garcia)

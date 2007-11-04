@@ -9,10 +9,13 @@ AM_MAINTAINER_MODE
 
 AC_LIBTOOL_WIN32_DLL
 
-AC_PROG_CC
 AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
 AC_PROG_LIBTOOL
-LT_INIT
 
 AC_CANONICAL_SYSTEM
 
@@ -25,9 +28,8 @@ AC_C_CONST
 
 GTK_DOC_CHECK(1.0)
 
-GTK_REQUIRED=2.6.8
-
-PKG_CHECK_MODULES(GTK, gtk+-2.0 >= $GTK_REQUIRED)
+PKG_CHECK_MODULES(GTK, gtk+-2.0 >= 2.6.0)
+PKG_CHECK_EXISTS(gladeui-1.0 >= 3.2.0, [GLADEUI_FOUND=yes], [GLADEUI_FOUND=no])
 
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
@@ -42,4 +44,14 @@ AC_CONFIG_FILES([
   docs/reference/Makefile
   docs/reference/version.xml
 ])
+
+if test $GLADEUI_FOUND = yes; then
+AC_CONFIG_FILES([
+  glade/Makefile
+  glade/icons/Makefile
+  glade/icons/16x16/Makefile
+  glade/icons/22x22/Makefile
+])
+fi
+
 AC_OUTPUT

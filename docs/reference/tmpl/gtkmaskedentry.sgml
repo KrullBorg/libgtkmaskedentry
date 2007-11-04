@@ -23,6 +23,16 @@ GtkMaskedEntry
 </para>
 
 
+<!-- ##### ARG GtkMaskedEntry:mask ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG GtkMaskedEntry:tab-inside ##### -->
+<para>
+
+</para>
+
 <!-- ##### FUNCTION gtk_masked_entry_new ##### -->
 <para>
 

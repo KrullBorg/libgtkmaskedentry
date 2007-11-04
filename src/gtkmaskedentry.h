@@ -1,6 +1,6 @@
 /*
  * GtkMaskedEntry widget for GTK+
- * Copyright (C) 2005-2006 Andrea Zagli <azagli@libero.it>
+ * Copyright (C) 2005-2007 Andrea Zagli <azagli@libero.it>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -42,14 +42,12 @@ typedef struct _GtkMaskedEntryClass   GtkMaskedEntryClass;
 
 struct _GtkMaskedEntry
 {
-  GtkEntry entry;
-
-  gchar *mask;
+	GtkEntry entry;
 };
 
 struct _GtkMaskedEntryClass
 {
-  GtkEntryClass parent_class;
+	GtkEntryClass parent_class;
 };
 
 

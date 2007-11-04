@@ -1,4 +1,4 @@
-SUBDIRS = src tests docs
+SUBDIRS = src tests docs glade
 
 EXTRA_DIST = libgtkmaskedentry.pc.in
 

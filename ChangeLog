@@ -1,3 +1,15 @@
+2007-11-04 Andrea Zagli <azagli@inwind.it>
+
+	* added glade-3 catalog and icons
+
+2007-11-01 Andrea Zagli <azagli@inwind.it>
+
+	* src/gtkmaskedentry.h:
+	* src/gtkmaskedentry.c: mask is totally private
+	* src/gtkmaskedentry.h:
+	* src/gtkmaskedentry.c:
+	* tests/masked_entry.c: added property tab-inside and test
+
 2006-01-12
 	* added constructor gtk_cell_renderer_masked_new_with_mask
 

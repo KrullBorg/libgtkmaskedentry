@@ -1,0 +1,138 @@
+<MACRO>
+<NAME>GTK_TYPE_MASKED_ENTRY</NAME>
+#define GTK_TYPE_MASKED_ENTRY                 (gtk_masked_entry_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GTK_MASKED_ENTRY</NAME>
+#define GTK_MASKED_ENTRY(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_MASKED_ENTRY, GtkMaskedEntry))
+</MACRO>
+<MACRO>
+<NAME>GTK_MASKED_ENTRY_CLASS</NAME>
+#define GTK_MASKED_ENTRY_CLASS(klass)         (G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_MASKED_ENTRY, GtkMaskedEntry))
+</MACRO>
+<MACRO>
+<NAME>GTK_IS_MASKED_ENTRY</NAME>
+#define GTK_IS_MASKED_ENTRY(obj)              (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_MASKED_ENTRY))
+</MACRO>
+<MACRO>
+<NAME>GTK_IS_MASKED_ENTRY_CLASS</NAME>
+#define GTK_IS_MASKED_ENTRY_CLASS(klass)      (G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_MASKED_ENTRY))
+</MACRO>
+<MACRO>
+<NAME>GTK_MASKED_ENTRY_GET_CLASS</NAME>
+#define GTK_MASKED_ENTRY_GET_CLASS(obj)       (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_MASKED_ENTRY, GtkMaskedEntry))
+</MACRO>
+<STRUCT>
+<NAME>GtkMaskedEntry</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GtkMaskedEntryClass</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GtkMaskedEntry</NAME>
+struct _GtkMaskedEntry
+{
+	GtkEntry entry;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GtkMaskedEntryClass</NAME>
+struct _GtkMaskedEntryClass
+{
+	GtkEntryClass parent_class;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gtk_masked_entry_get_type</NAME>
+<RETURNS>GType </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_masked_entry_new</NAME>
+<RETURNS>GtkWidget *</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_masked_entry_new_with_mask</NAME>
+<RETURNS>GtkWidget *</RETURNS>
+const gchar *mask
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_masked_entry_set_mask</NAME>
+<RETURNS>void </RETURNS>
+GtkMaskedEntry *masked_entry,const gchar *mask
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_masked_entry_get_mask</NAME>
+<RETURNS>G_CONST_RETURN gchar *</RETURNS>
+GtkMaskedEntry *masked_entry
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_masked_entry_get_text</NAME>
+<RETURNS>G_CONST_RETURN gchar *</RETURNS>
+GtkMaskedEntry *masked_entry
+</FUNCTION>
+<MACRO>
+<NAME>GTK_TYPE_CELL_RENDERER_MASKED</NAME>
+#define GTK_TYPE_CELL_RENDERER_MASKED                 (gtk_cell_renderer_masked_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GTK_CELL_RENDERER_MASKED</NAME>
+#define GTK_CELL_RENDERER_MASKED(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_CELL_RENDERER_MASKED, GtkCellRendererMasked))
+</MACRO>
+<MACRO>
+<NAME>GTK_CELL_RENDERER_MASKED_CLASS</NAME>
+#define GTK_CELL_RENDERER_MASKED_CLASS(klass)         (G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_CELL_RENDERER_MASKED, GtkCellRendererMasked))
+</MACRO>
+<MACRO>
+<NAME>GTK_IS_CELL_RENDERER_MASKED</NAME>
+#define GTK_IS_CELL_RENDERER_MASKED(obj)              (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_CELL_RENDERER_MASKED))
+</MACRO>
+<MACRO>
+<NAME>GTK_IS_CELL_RENDERER_MASKED_CLASS</NAME>
+#define GTK_IS_CELL_RENDERER_MASKED_CLASS(klass)      (G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_CELL_RENDERER_MASKED))
+</MACRO>
+<MACRO>
+<NAME>GTK_CELL_RENDERER_MASKED_GET_CLASS</NAME>
+#define GTK_CELL_RENDERER_MASKED_GET_CLASS(obj)       (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_CELL_RENDERER_MASKED, GtkCellRendererMasked))
+</MACRO>
+<STRUCT>
+<NAME>GtkCellRendererMasked</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GtkCellRendererMaskedClass</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GtkCellRendererMasked</NAME>
+struct _GtkCellRendererMasked
+{
+  GtkCellRendererText parent;
+};
+</STRUCT>
+<STRUCT>
+<NAME>GtkCellRendererMaskedClass</NAME>
+struct _GtkCellRendererMaskedClass
+{
+  GtkCellRendererTextClass parent_class;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gtk_cell_renderer_masked_get_type</NAME>
+<RETURNS>GType </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_cell_renderer_masked_new</NAME>
+<RETURNS>GtkCellRenderer *</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_cell_renderer_masked_new_with_mask</NAME>
+<RETURNS>GtkCellRenderer *</RETURNS>
+const gchar *mask
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_cell_renderer_masked_set_mask</NAME>
+<RETURNS>void </RETURNS>
+GtkCellRendererMasked *renderer, const gchar *mask
+</FUNCTION>

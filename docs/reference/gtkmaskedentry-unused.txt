@@ -1,0 +1,2 @@
+GtkCellRendererMaskedClass
+GtkMaskedEntryClass

@@ -1,5 +1,5 @@
 AC_PREREQ(2.59)
-AC_INIT([GtkMaskedEntry], [0.0.3], [azagli@inwind.it])
+AC_INIT([GtkMaskedEntry], [0.0.3], [azagli@libero.it])
 AC_CONFIG_SRCDIR([src/gtkmaskedentry.c])
 AM_CONFIG_HEADER(config.h)
 

@@ -1,6 +1,6 @@
 /*
  * GtkMaskedEntry widget test
- * Copyright (C) 2005 Andrea Zagli
+ * Copyright (C) 2005-2009 Andrea Zagli <azagli@libero.it>
  *
  * This software is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -184,11 +184,11 @@ main (int argc, char **argv)
 	label = gtk_label_new ("Set value");
 	gtk_table_attach (GTK_TABLE (table), label, 0, 1, 4, 5, 0, 0, 3, 3);
 	gtk_widget_show (label);
-	
+
 	txtValueNew = gtk_entry_new ();
 	gtk_table_attach (GTK_TABLE (table), txtValueNew, 1, 2, 4, 5, GTK_EXPAND | GTK_FILL, 0, 3, 3);
 	gtk_widget_show (txtValueNew);
-	
+
 	btnValueNew = gtk_button_new_with_label ("Set");
 	gtk_table_attach (GTK_TABLE (table), btnValueNew, 2, 3, 4, 5, 0, 0, 3, 3);
 	gtk_widget_show (btnValueNew);
@@ -220,7 +220,7 @@ main (int argc, char **argv)
 	rend = gtk_cell_renderer_masked_new ();
 	g_object_set (rend, "editable", TRUE, NULL);
 	g_signal_connect (rend, "edited",
-					  G_CALLBACK (on_cell_edited), NULL);
+	                  G_CALLBACK (on_cell_edited), NULL);
 
 	col = gtk_tree_view_column_new_with_attributes ("Masked",
 													rend,

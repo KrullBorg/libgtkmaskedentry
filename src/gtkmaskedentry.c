@@ -1,6 +1,6 @@
 /*
  * GtkMaskedEntry widget for GTK+
- * Copyright (C) 2005-2007 Andrea Zagli <azagli@libero.it>
+ * Copyright (C) 2005-2009 Andrea Zagli <azagli@libero.it>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -350,10 +350,10 @@ gtk_masked_entry_delete_text (GtkEditable *editable,
 					newtext[c] = mask[i];
 				}
 		}
-	newtext[c] = '\0';
 
 	if (c > 0)
 		{
+			newtext[c] = '\0';
 			i = start_pos;
 			g_signal_handlers_block_by_func (editable, (gpointer)gtk_masked_entry_insert_text, user_data);
 			g_signal_handlers_block_by_func (editable, (gpointer)gtk_masked_entry_delete_text, user_data);
@@ -419,10 +419,10 @@ gtk_masked_entry_insert_text (GtkEditable *editable,
 					newtext[c++] = (mask[*position + i] == '^' ? toupper (text[i]) : text[i]);
 				}
     }
-	newtext[c] = '\0';
 
 	if (c > 0)
 		{
+			newtext[c] = '\0';
 			g_signal_handlers_block_by_func (editable, (gpointer)gtk_masked_entry_insert_text, user_data);
 			g_signal_handlers_block_by_func (editable, (gpointer)gtk_masked_entry_delete_text, user_data);
 			gtk_editable_delete_text (editable, *position, *position + c);

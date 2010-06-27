@@ -2,6 +2,7 @@
 <FILE>gtkmaskedentry</FILE>
 <TITLE>GtkMaskedEntry</TITLE>
 GtkMaskedEntry
+GtkMaskedEntryClass
 gtk_masked_entry_new
 gtk_masked_entry_new_with_mask
 gtk_masked_entry_set_mask
@@ -18,9 +19,29 @@ GTK_MASKED_ENTRY_GET_CLASS
 </SECTION>
 
 <SECTION>
+<FILE>gtkformwidgetmaskedentry</FILE>
+<TITLE>GtkFormWidgetMaskedEntry</TITLE>
+GtkFormWidgetMaskedEntry
+GtkFormWidgetMaskedEntryClass
+gtk_form_widget_masked_entry_new
+gtk_form_widget_masked_entry_get_value_stringify
+gtk_form_widget_masked_entry_set_value_stringify
+gtk_form_widget_masked_entry_set_editable
+<SUBSECTION Standard>
+GTK_FORM_WIDGET_MASKED_ENTRY
+GTK_FORM_IS_WIDGET_MASKED_ENTRY
+GTK_FORM_TYPE_WIDGET_MASKED_ENTRY
+gtk_form_widget_masked_entry_get_type
+GTK_FORM_WIDGET_MASKED_ENTRY_CLASS
+GTK_FORM_IS_WIDGET_MASKED_ENTRY_CLASS
+GTK_FORM_WIDGET_MASKED_ENTRY_GET_CLASS
+</SECTION>
+
+<SECTION>
 <FILE>gtkcellrenderermasked</FILE>
 <TITLE>GtkCellRendererMasked</TITLE>
 GtkCellRendererMasked
+GtkCellRendererMaskedClass
 gtk_cell_renderer_masked_new
 gtk_cell_renderer_masked_new_with_mask
 gtk_cell_renderer_masked_set_mask

@@ -2,10 +2,12 @@ ACLOCAL_AMFLAGS = -I m4
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
 
-SUBDIRS = src tests docs
-if test "$(GLADEUI_FOUND)" = "yes"; then \
-	SUBDIRS = $(SUBDIRS) glade; \
-fi
+if GLADEUI_FOUND
+SUBDIRS_GLADE = glade
+else
+SUBDIRS_GLADE =
+endif
+SUBDIRS = src tests docs $(SUBDIRS_GLADE)
 
 EXTRA_DIST = libgtkmaskedentry.pc.in
 

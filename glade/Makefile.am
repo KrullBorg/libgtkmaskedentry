@@ -10,7 +10,7 @@ EXTRA_DIST = $(catalogs_DATA)
 
 install-exec-hook:
 	cd $(moduledir) && \
-	ln -s $(libdir)/libgtkmaskedentry.so .
+	ln -s -f $(libdir)/libgtkmaskedentry.so .
 
 uninstall-hook:
 	rm -f $(moduledir)/libgtkmaskedentry.so

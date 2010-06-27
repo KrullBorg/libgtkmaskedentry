@@ -35,6 +35,7 @@ PKG_CHECK_EXISTS(libgtkform >= 0.2.0, [LIBGTKFORM_FOUND=yes], [LIBGTKFORM_FOUND=
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
 
+AM_CONDITIONAL(GLADEUI_FOUND, test $GLADEUI_FOUND = yes)
 AM_CONDITIONAL(LIBGTKFORM_FOUND, test $LIBGTKFORM_FOUND = yes)
 
 if test $LIBGTKFORM_FOUND = yes; then
@@ -59,8 +60,11 @@ if test $GLADEUI_FOUND = yes; then
 AC_CONFIG_FILES([
   glade/Makefile
   glade/icons/Makefile
-  glade/icons/16x16/Makefile
-  glade/icons/22x22/Makefile
+  glade/icons/hicolor/Makefile
+  glade/icons/hicolor/16x16/Makefile
+  glade/icons/hicolor/16x16/actions/Makefile
+  glade/icons/hicolor/22x22/Makefile
+  glade/icons/hicolor/22x22/actions/Makefile
 ])
 fi
 

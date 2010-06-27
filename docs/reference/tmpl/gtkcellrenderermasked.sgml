@@ -17,6 +17,9 @@ GtkCellRendererMasked
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GtkCellRendererMasked ##### -->
 <para>
 
@@ -33,6 +36,7 @@ GtkCellRendererMasked
 
 </para>
 
+@void: 
 @Returns: 
 
 

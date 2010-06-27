@@ -17,6 +17,9 @@ GtkMaskedEntry
 <!-- ##### SECTION Stability_Level ##### -->
 
 
+<!-- ##### SECTION Image ##### -->
+
+
 <!-- ##### STRUCT GtkMaskedEntry ##### -->
 <para>
 
@@ -38,6 +41,7 @@ GtkMaskedEntry
 
 </para>
 
+@void: 
 @Returns: 
 
 

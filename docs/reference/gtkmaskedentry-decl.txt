@@ -45,32 +45,101 @@ struct _GtkMaskedEntryClass
 <FUNCTION>
 <NAME>gtk_masked_entry_get_type</NAME>
 <RETURNS>GType </RETURNS>
-void
+void 
 </FUNCTION>
 <FUNCTION>
 <NAME>gtk_masked_entry_new</NAME>
 <RETURNS>GtkWidget *</RETURNS>
-void
+void 
 </FUNCTION>
 <FUNCTION>
 <NAME>gtk_masked_entry_new_with_mask</NAME>
 <RETURNS>GtkWidget *</RETURNS>
-const gchar *mask
+const gchar *mask 
 </FUNCTION>
 <FUNCTION>
 <NAME>gtk_masked_entry_set_mask</NAME>
 <RETURNS>void </RETURNS>
-GtkMaskedEntry *masked_entry,const gchar *mask
+GtkMaskedEntry *masked_entry, const gchar *mask 
 </FUNCTION>
 <FUNCTION>
 <NAME>gtk_masked_entry_get_mask</NAME>
 <RETURNS>G_CONST_RETURN gchar *</RETURNS>
-GtkMaskedEntry *masked_entry
+GtkMaskedEntry *masked_entry 
 </FUNCTION>
 <FUNCTION>
 <NAME>gtk_masked_entry_get_text</NAME>
 <RETURNS>G_CONST_RETURN gchar *</RETURNS>
-GtkMaskedEntry *masked_entry
+GtkMaskedEntry *masked_entry 
+</FUNCTION>
+<MACRO>
+<NAME>GTK_FORM_TYPE_WIDGET_MASKED_ENTRY</NAME>
+#define GTK_FORM_TYPE_WIDGET_MASKED_ENTRY                 (gtk_form_widget_masked_entry_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GTK_FORM_WIDGET_MASKED_ENTRY</NAME>
+#define GTK_FORM_WIDGET_MASKED_ENTRY(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_FORM_TYPE_WIDGET_MASKED_ENTRY, GtkFormWidgetMaskedEntry))
+</MACRO>
+<MACRO>
+<NAME>GTK_FORM_WIDGET_MASKED_ENTRY_CLASS</NAME>
+#define GTK_FORM_WIDGET_MASKED_ENTRY_CLASS(klass)         (G_TYPE_CHECK_CLASS_CAST ((klass), GTK_FORM_TYPE_WIDGET_MASKED_ENTRY, GtkFormWidgetMaskedEntryClass))
+</MACRO>
+<MACRO>
+<NAME>GTK_FORM_IS_WIDGET_MASKED_ENTRY</NAME>
+#define GTK_FORM_IS_WIDGET_MASKED_ENTRY(obj)              (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_FORM_TYPE_WIDGET_MASKED_ENTRY))
+</MACRO>
+<MACRO>
+<NAME>GTK_FORM_IS_WIDGET_MASKED_ENTRY_CLASS</NAME>
+#define GTK_FORM_IS_WIDGET_MASKED_ENTRY_CLASS(klass)      (G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_FORM_TYPE_WIDGET_MASKED_ENTRY))
+</MACRO>
+<MACRO>
+<NAME>GTK_FORM_WIDGET_MASKED_ENTRY_GET_CLASS</NAME>
+#define GTK_FORM_WIDGET_MASKED_ENTRY_GET_CLASS(obj)       (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_FORM_TYPE_WIDGET_MASKED_ENTRY, GtkFormWidgetMaskedEntryClass))
+</MACRO>
+<STRUCT>
+<NAME>GtkFormWidgetMaskedEntry</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GtkFormWidgetMaskedEntryClass</NAME>
+</STRUCT>
+<STRUCT>
+<NAME>GtkFormWidgetMaskedEntry</NAME>
+struct _GtkFormWidgetMaskedEntry
+	{
+		GtkFormWidget parent;
+	};
+</STRUCT>
+<STRUCT>
+<NAME>GtkFormWidgetMaskedEntryClass</NAME>
+struct _GtkFormWidgetMaskedEntryClass
+	{
+		GtkFormWidgetClass parent_class;
+	};
+</STRUCT>
+<FUNCTION>
+<NAME>gtk_form_widget_masked_entry_get_type</NAME>
+<RETURNS>GType </RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_form_widget_masked_entry_new</NAME>
+<RETURNS>GtkFormWidget *</RETURNS>
+void 
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_form_widget_masked_entry_get_value_stringify</NAME>
+<RETURNS>gchar *</RETURNS>
+GtkFormWidget *widget 
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_form_widget_masked_entry_set_value_stringify</NAME>
+<RETURNS>gboolean </RETURNS>
+GtkFormWidget *fwidget, const gchar *value 
+</FUNCTION>
+<FUNCTION>
+<NAME>gtk_form_widget_masked_entry_set_editable</NAME>
+<RETURNS>void </RETURNS>
+GtkFormWidget *fwidget, gboolean editable 
 </FUNCTION>
 <MACRO>
 <NAME>GTK_TYPE_CELL_RENDERER_MASKED</NAME>
@@ -119,20 +188,20 @@ struct _GtkCellRendererMaskedClass
 <FUNCTION>
 <NAME>gtk_cell_renderer_masked_get_type</NAME>
 <RETURNS>GType </RETURNS>
-void
+void 
 </FUNCTION>
 <FUNCTION>
 <NAME>gtk_cell_renderer_masked_new</NAME>
 <RETURNS>GtkCellRenderer *</RETURNS>
-void
+void 
 </FUNCTION>
 <FUNCTION>
 <NAME>gtk_cell_renderer_masked_new_with_mask</NAME>
 <RETURNS>GtkCellRenderer *</RETURNS>
-const gchar *mask
+const gchar *mask 
 </FUNCTION>
 <FUNCTION>
 <NAME>gtk_cell_renderer_masked_set_mask</NAME>
 <RETURNS>void </RETURNS>
-GtkCellRendererMasked *renderer, const gchar *mask
+GtkCellRendererMasked *renderer, const gchar *mask 
 </FUNCTION>

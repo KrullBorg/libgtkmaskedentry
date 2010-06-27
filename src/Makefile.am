@@ -30,7 +30,7 @@ include_HEADERS = gtkmaskedentry.h \
 
 install-exec-hook:
 	cd $(libgtkformmodulesdir) && \
-	ln -s $(libdir)/libgtkmaskedentry.so .
+	ln -s -f $(libdir)/libgtkmaskedentry.so .
 
 uninstall-hook:
 	rm -f $(libgtkformmodulesdir)/libgtkmaskedentry.so

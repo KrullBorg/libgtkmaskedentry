@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<gtkform>
+
+	<table>clients</table>
+
+	<widget type="masked_entry" name="gtkmaskedentry1" label="label1">
+		<field type="datetime" name="data">
+			<obligatory>TRUE</obligatory>
+			<datetime-type>date</datetime-type>
+			<display-format>%m-%d-%Y</display-format>
+			<obligatory>TRUE</obligatory>
+		</field>
+	</widget>
+
+</gtkform>

@@ -1,0 +1,28 @@
+GObject
+  GInitiallyUnowned
+    GtkObject
+      GtkWidget
+        GtkEntry
+          GtkMaskedEntry
+        GtkContainer
+          GtkMenuShell
+            GtkMenu
+      GtkCellRenderer
+        GtkCellRendererText
+          GtkCellRendererMasked
+  GtkStyle
+  GdkDrawable
+    GdkWindow
+  GdkDragContext
+  GtkTooltip
+  GdkScreen
+  GtkEntryBuffer
+  GdkPixbuf
+  GtkSettings
+GInterface
+  GTypePlugin
+  AtkImplementorIface
+  GtkBuildable
+  GtkEditable
+  GtkCellEditable
+  GIcon

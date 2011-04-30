@@ -1,0 +1,19 @@
+48% symbol docs coverage.
+10 symbols documented.
+0 symbols incomplete.
+11 not documented.
+
+
+GtkCellRendererMasked
+GtkMaskedEntry
+gtk_form_widget_masked_entry_get_value_stringify
+gtk_form_widget_masked_entry_new
+gtk_form_widget_masked_entry_set_value_stringify
+gtk_form_widget_set_editable
+gtk_masked_entry_get_mask
+gtk_masked_entry_get_text
+
+
+gtkcellrenderermasked:Short_Description
+gtkmaskedentry:Long_Description
+gtkmaskedentry:Short_Description

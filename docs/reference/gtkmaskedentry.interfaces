@@ -1,0 +1,6 @@
+GtkWidget AtkImplementorIface GtkBuildable
+GtkEntry AtkImplementorIface GtkBuildable GtkEditable GtkCellEditable
+GtkMaskedEntry AtkImplementorIface GtkBuildable GtkEditable GtkCellEditable
+GtkContainer AtkImplementorIface GtkBuildable
+GtkMenuShell AtkImplementorIface GtkBuildable
+GtkMenu AtkImplementorIface GtkBuildable

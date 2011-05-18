@@ -1,6 +1,6 @@
 /*
  * GtkCellRendererMasked widget for GTK+
- * Copyright (C) 2005 Andrea Zagli <azagli@libero.it>
+ * Copyright (C) 2005-2011 Andrea Zagli <azagli@libero.it>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -18,7 +18,9 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include <gtk/gtkprivate.h>
+#ifdef HAVE_CONFIG_H
+	#include "config.h"
+#endif
 
 #include <gtkmaskedentry.h>
 
@@ -48,9 +50,8 @@ static GtkCellEditable *gtk_cell_renderer_masked_start_editing (GtkCellRenderer 
 
 enum
 {
-  PROP_0,
-
-  PROP_MASK
+	PROP_0,
+	PROP_MASK
 };
 
 static gpointer parent_class;
@@ -67,33 +68,7 @@ struct _GtkCellRendererMaskedPrivate
 	GtkWidget *entry;
 };
 
-
-GType
-gtk_cell_renderer_masked_get_type (void)
-{
-  static GType cell_masked_type = 0;
-
-  if (!cell_masked_type)
-    {
-      static const GTypeInfo cell_masked_info =
-      {
-        sizeof (GtkCellRendererMaskedClass),
-        NULL,		/* base_init */
-        NULL,		/* base_finalize */
-        (GClassInitFunc) gtk_cell_renderer_masked_class_init,
-        NULL,		/* class_finalize */
-        NULL,		/* class_data */
-        sizeof (GtkCellRendererMasked),
-        0,		/* n_preallocs */
-        (GInstanceInitFunc) gtk_cell_renderer_masked_init,
-      };
-
-      cell_masked_type = g_type_register_static (GTK_TYPE_CELL_RENDERER_TEXT, "GtkCellRendererMasked",
-			                                           &cell_masked_info, 0);
-    }
-
-  return cell_masked_type;
-}
+G_DEFINE_TYPE (GtkCellRendererMasked, gtk_cell_renderer_masked, GTK_TYPE_CELL_RENDERER_TEXT)
 
 static void
 gtk_cell_renderer_masked_init (GtkCellRendererMasked *cell)
@@ -122,7 +97,7 @@ gtk_cell_renderer_masked_class_init (GtkCellRendererMaskedClass *class)
                                                         "Mask",
                                                         "Mask",
                                                         NULL,
-                                                        GTK_PARAM_READWRITE));
+                                                        G_PARAM_READWRITE));
 
 	g_type_class_add_private (object_class, sizeof (GtkCellRendererMaskedPrivate));
 }

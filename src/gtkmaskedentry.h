@@ -1,6 +1,6 @@
 /*
  * GtkMaskedEntry widget for GTK+
- * Copyright (C) 2005-2007 Andrea Zagli <azagli@libero.it>
+ * Copyright (C) 2005-2011 Andrea Zagli <azagli@libero.it>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,8 +21,7 @@
 #ifndef __GTK_MASKED_ENTRY_H__
 #define __GTK_MASKED_ENTRY_H__
 
-#include <gdk/gdk.h>
-#include <gtk/gtkentry.h>
+#include <gtk/gtk.h>
 
 
 G_BEGIN_DECLS
@@ -30,10 +29,10 @@ G_BEGIN_DECLS
 
 #define GTK_TYPE_MASKED_ENTRY                 (gtk_masked_entry_get_type ())
 #define GTK_MASKED_ENTRY(obj)                 (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_MASKED_ENTRY, GtkMaskedEntry))
-#define GTK_MASKED_ENTRY_CLASS(klass)         (G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_MASKED_ENTRY, GtkMaskedEntry))
+#define GTK_MASKED_ENTRY_CLASS(klass)         (G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_MASKED_ENTRY, GtkMaskedEntryClass))
 #define GTK_IS_MASKED_ENTRY(obj)              (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_MASKED_ENTRY))
 #define GTK_IS_MASKED_ENTRY_CLASS(klass)      (G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_MASKED_ENTRY))
-#define GTK_MASKED_ENTRY_GET_CLASS(obj)       (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_MASKED_ENTRY, GtkMaskedEntry))
+#define GTK_MASKED_ENTRY_GET_CLASS(obj)       (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_MASKED_ENTRY, GtkMaskedEntryClass))
 
 
 typedef struct _GtkMaskedEntry        GtkMaskedEntry;

@@ -1,6 +1,6 @@
 /*
  * GtkMaskedEntry widget for GTK+
- * Copyright (C) 2005-2009 Andrea Zagli <azagli@libero.it>
+ * Copyright (C) 2005-2011 Andrea Zagli <azagli@libero.it>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -25,9 +25,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#include <glib/gprintf.h>
 #include <gdk/gdkkeysyms.h>
-#include <gtk/gtkentry.h>
 
 #include "gtkmaskedentry.h"
 

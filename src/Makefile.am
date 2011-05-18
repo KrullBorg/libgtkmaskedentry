@@ -1,4 +1,4 @@
-INCLUDES = $(WARN_CFLAGS) \
+AM_CPPFLAGS = $(WARN_CFLAGS) \
            $(DISABLE_DEPRECATED_CFLAGS) \
            $(GTK_CFLAGS) \
            $(GTKFORM_CFLAGS)
@@ -18,6 +18,14 @@ GTKFORM_H =
 libgtkformmodulesdir =
 endif
 
+if PLATFORM_WIN32
+libmodulesext = -0.dll
+libmodulesdir = $(bindir)
+else
+libmodulesext = .so
+libmodulesdir = $(libdir)
+endif
+
 libgtkmaskedentry_la_SOURCES = gtkmaskedentry.c \
                                gtkcellrenderermasked.c \
                                $(GTKFORM_C)
@@ -28,9 +36,13 @@ include_HEADERS = gtkmaskedentry.h \
                   gtkcellrenderermasked.h \
                   $(GTKFORM_H)
 
+if LIBGTKFORM_FOUND
 install-exec-hook:
 	cd $(libgtkformmodulesdir) && \
-	ln -s -f $(libdir)/libgtkmaskedentry.so .
+		ln -s -f $(libmodulesdir)/libgtkmaskedentry$(libmodulesext) .
+endif
 
+if LIBGTKFORM_FOUND
 uninstall-hook:
-	rm -f $(libgtkformmodulesdir)/libgtkmaskedentry.so
+	rm -f $(libgtkformmodulesdir)/libgtkmaskedentry$(libmodulesext)
+endif

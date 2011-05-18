@@ -45,6 +45,20 @@ AC_SUBST(GTKFORM_CFLAGS)
 AC_SUBST(GTKFORM_LIBS)
 fi
 
+dnl ******************************
+dnl Check for Operating System
+dnl ******************************
+
+platform_win32=no
+
+case "$host" in
+*-mingw*)
+    platform_win32=yes
+    ;;
+esac
+
+AM_CONDITIONAL(PLATFORM_WIN32, [test $platform_win32 = yes])
+
 # Output files
 AC_CONFIG_FILES([
   libgtkmaskedentry.pc

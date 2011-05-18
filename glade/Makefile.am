@@ -1,16 +1,24 @@
 SUBDIRS = icons
 
-moduledir = `pkg-config --variable=moduledir gladeui-1.0`
+glademodulesdir = `pkg-config --variable=moduledir gladeui-1.0`
 
-catalogsdir = `pkg-config --variable=catalogdir gladeui-1.0`
+gladecatalogsdir = `pkg-config --variable=catalogdir gladeui-1.0`
 
-catalogs_DATA = gtkmaskedentry.xml
+gladecatalogs_DATA = gtkmaskedentry.xml
 
-EXTRA_DIST = $(catalogs_DATA)
+EXTRA_DIST = $(gladecatalogs_DATA)
+
+if PLATFORM_WIN32
+libmodulesext = -0.dll
+libmodulesdir = $(bindir)
+else
+libmodulesext = .so
+libmodulesdir = $(libdir)
+endif
 
 install-exec-hook:
-	cd $(moduledir) && \
-	ln -s -f $(libdir)/libgtkmaskedentry.so .
+	cd $(glademodulesdir) && \
+	ln -s -f $(libmodulesdir)/libgtkmaskedentry$(libmodulesext) .
 
 uninstall-hook:
-	rm -f $(moduledir)/libgtkmaskedentry.so
+	rm -f $(glademodulesdir)/libgtkmaskedentry$(libmodulesext)

@@ -47,3 +47,4 @@ stamp-it
 intltool-*
 Rules-quot
 tests/plugin_gtkform
+tests/*.exe

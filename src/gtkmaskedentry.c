@@ -18,6 +18,10 @@
  * Boston, MA 02111-1307, USA.
  */
 
+#ifdef HAVE_CONFIG_H
+	#include "config.h"
+#endif
+
 #include <ctype.h>
 #include <string.h>
 
@@ -83,32 +87,7 @@ struct _GtkMaskedEntryPrivate
 		gboolean tab_inside;
 	};
 
-GType
-gtk_masked_entry_get_type (void)
-{
-	static GType masked_entry_type = 0;
-
-	if (!masked_entry_type)
-		{
-			static const GTypeInfo masked_entry_info =
-				{
-					sizeof (GtkMaskedEntryClass),
-					NULL,		/* base_init */
-					NULL,		/* base_finalize */
-					(GClassInitFunc) gtk_masked_entry_class_init,
-					NULL,		/* class_finalize */
-					NULL,		/* class_data */
-					sizeof (GtkMaskedEntry),
-					0,		/* n_preallocs */
-					(GInstanceInitFunc) gtk_masked_entry_init,
-				};
-
-			masked_entry_type = g_type_register_static (GTK_TYPE_ENTRY, "GtkMaskedEntry",
-			                                            &masked_entry_info, 0);
-		}
-
-  return masked_entry_type;
-}
+G_DEFINE_TYPE (GtkMaskedEntry, gtk_masked_entry, GTK_TYPE_ENTRY)
 
 static void
 gtk_masked_entry_class_init (GtkMaskedEntryClass *klass)

@@ -58,6 +58,10 @@ main (int argc, char **argv)
 	error = NULL;
 	builder = gtk_builder_new ();
 	gtk_builder_add_from_file (builder, "plugin_gtkform.ui", &error);
+	if (error != NULL && error->message != NULL)
+		{
+			g_warning ("%s", error->message);
+		}
 
 	gtk_builder_connect_signals (builder, NULL);
 

@@ -55,6 +55,11 @@ main (int argc, char **argv)
 
 	gtk_init (&argc, &argv);
 
+#ifdef G_OS_WIN32
+	gchar *libname = g_strdup ("libgtkmaskedentry-0.dll");
+	g_module_open (g_build_filename (g_getenv ("LIBGTKFORM_MODULESDIR"), libname, NULL), G_MODULE_BIND_LAZY);
+#endif
+
 	error = NULL;
 	builder = gtk_builder_new ();
 	gtk_builder_add_from_file (builder, "plugin_gtkform.ui", &error);

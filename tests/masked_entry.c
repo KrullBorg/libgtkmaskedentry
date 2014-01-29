@@ -1,6 +1,6 @@
 /*
  * GtkMaskedEntry widget test
- * Copyright (C) 2005-2009 Andrea Zagli <azagli@libero.it>
+ * Copyright (C) 2005-2014 Andrea Zagli <azagli@libero.it>
  *
  * This software is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -53,8 +53,8 @@ static void
 btn_setmask_on_clicked (GtkButton *button,
                         gpointer user_data)
 {
-	gtk_masked_entry_set_mask (GTK_MASKED_ENTRY (masked_entry), gtk_combo_box_get_active_text (GTK_COMBO_BOX (txtMask)));
-	g_object_set (G_OBJECT (rend), "mask", gtk_combo_box_get_active_text (GTK_COMBO_BOX (txtMask)), NULL);
+	gtk_masked_entry_set_mask (GTK_MASKED_ENTRY (masked_entry), gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (txtMask)));
+	g_object_set (G_OBJECT (rend), "mask", gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (txtMask)), NULL);
 }
 
 static void
@@ -127,18 +127,18 @@ main (int argc, char **argv)
 	gtk_table_attach (GTK_TABLE (table), label, 0, 1, 0, 1, 0, 0, 3, 3);
 	gtk_widget_show (label);
 	
-	txtMask = gtk_combo_box_entry_new_text ();
+	txtMask = gtk_combo_box_text_new_with_entry ();
 	gtk_table_attach (GTK_TABLE (table), txtMask, 1, 2, 0, 1, GTK_EXPAND | GTK_FILL, 0, 3, 3);
 	gtk_widget_show (txtMask);
 	
 	/* some mask examples */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (txtMask), "00/00/0000");
-	gtk_combo_box_append_text (GTK_COMBO_BOX (txtMask), "999 999 999"); /* digit excluded 0 */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (txtMask), "@@@ @@@ @@@"); /* alpha */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (txtMask), "^^^ ^^^ ^^^"); /* alpha to upper case */
-	gtk_combo_box_append_text (GTK_COMBO_BOX (txtMask), "ABC 00@@@00");
-	gtk_combo_box_append_text (GTK_COMBO_BOX (txtMask), "### some text");
-	
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (txtMask), "00/00/0000");
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (txtMask), "999 999 999"); /* digit excluded 0 */
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (txtMask), "@@@ @@@ @@@"); /* alpha */
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (txtMask), "^^^ ^^^ ^^^"); /* alpha to upper case */
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (txtMask), "ABC 00@@@00");
+	gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (txtMask), "### some text");
+
 	btnSetMask = gtk_button_new_with_label ("Set Mask");
 	gtk_table_attach (GTK_TABLE (table), btnSetMask, 2, 3, 0, 1, 0, 0, 3, 3);
 	gtk_widget_show (btnSetMask);

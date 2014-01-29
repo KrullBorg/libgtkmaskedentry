@@ -1,6 +1,6 @@
 /*
  * GtkCellRendererMasked widget for GTK+
- * Copyright (C) 2005-2011 Andrea Zagli <azagli@libero.it>
+ * Copyright (C) 2005-2014 Andrea Zagli <azagli@libero.it>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -43,8 +43,8 @@ static GtkCellEditable *gtk_cell_renderer_masked_start_editing (GtkCellRenderer 
                                                                 GdkEvent *event,
                                                                 GtkWidget *widget,
                                                                 const gchar *path,
-                                                                GdkRectangle *background_area,
-                                                                GdkRectangle *cell_area,
+                                                                const GdkRectangle *background_area,
+                                                                const GdkRectangle *cell_area,
                                                                 GtkCellRendererState flags);
 
 
@@ -175,13 +175,17 @@ gtk_cell_renderer_masked_editing_done (GtkCellEditable *entry,
                                        gpointer data)
 {
 	const gchar *path, *new_text;
+
+	gboolean editing_canceled;
+
 	GtkCellRendererMaskedPrivate *priv = GTK_CELL_RENDERER_MASKED_GET_PRIVATE (data);
 
 	priv->entry = NULL;
 
+	g_object_get (G_OBJECT (entry), "editing-canceled", &editing_canceled, NULL);
 	gtk_cell_renderer_stop_editing (GTK_CELL_RENDERER (data),
-	                                GTK_ENTRY (entry)->editing_canceled);
-	if (GTK_ENTRY (entry)->editing_canceled)
+	                                editing_canceled);
+	if (editing_canceled)
 		return;
 
 	path = g_object_get_data (G_OBJECT (entry), GTK_CELL_RENDERER_TEXT_PATH);
@@ -195,30 +199,38 @@ static GtkCellEditable
                                          GdkEvent *event,
                                          GtkWidget *widget,
                                          const gchar *path,
-                                         GdkRectangle *background_area,
-                                         GdkRectangle *cell_area,
+                                         const GdkRectangle *background_area,
+                                         const GdkRectangle *cell_area,
                                          GtkCellRendererState flags)
 {
 	GtkCellRendererMasked *celltext;
 	GtkCellRendererMaskedPrivate *priv;
 
+	gboolean editable;
+	gfloat xalign;
+	gchar *text;
+
 	celltext = GTK_CELL_RENDERER_MASKED (cell);
 	priv = GTK_CELL_RENDERER_MASKED_GET_PRIVATE (cell);
 
 	/* If the cell isn't editable we return NULL. */
-	if (GTK_CELL_RENDERER_TEXT (celltext)->editable == FALSE)
+	g_object_get (G_OBJECT (celltext), "editable", &editable, NULL);
+	if (editable == FALSE)
 		return NULL;
 
+	g_object_get (G_OBJECT (cell), "xalign", &xalign, NULL);
 	priv->entry = g_object_new (GTK_TYPE_MASKED_ENTRY,
 	                            "has-frame", FALSE,
-	                            "xalign", cell->xalign,
+	                            "xalign", xalign,
 	                            NULL);
 
 	if (priv->mask)
 		gtk_masked_entry_set_mask (GTK_MASKED_ENTRY (priv->entry), priv->mask);
 
-	if (GTK_CELL_RENDERER_TEXT (celltext)->text)
-		gtk_entry_set_text (GTK_ENTRY (priv->entry), GTK_CELL_RENDERER_TEXT (celltext)->text);
+	text = NULL;
+	g_object_get (G_OBJECT (celltext), "text", &text, NULL);
+	if (text)
+		gtk_entry_set_text (GTK_ENTRY (priv->entry), text);
 
 	g_object_set_data_full (G_OBJECT (priv->entry), GTK_CELL_RENDERER_TEXT_PATH, g_strdup (path), g_free);
 

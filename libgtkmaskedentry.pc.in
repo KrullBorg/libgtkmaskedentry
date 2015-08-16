@@ -4,8 +4,8 @@ libdir=@libdir@
 includedir=@includedir@
 
 Name: @PACKAGE_NAME@
-Description: GTK+ 2.0 Masked Entry Widget
+Description: GTK+ 3.0 Masked Entry Widget
 Version: @PACKAGE_VERSION@
-Requires: gtk+-2.0
+Requires: gtk+-3.0
 Libs: -L${libdir} -lgtkmaskedentry
 Cflags: -I${includedir}

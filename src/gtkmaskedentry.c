@@ -1,6 +1,6 @@
 /*
  * GtkMaskedEntry widget for GTK+
- * Copyright (C) 2005-2011 Andrea Zagli <azagli@libero.it>
+ * Copyright (C) 2005-2014 Andrea Zagli <azagli@libero.it>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -262,7 +262,7 @@ gtk_masked_entry_key_press_event (GtkWidget   *widget,
 	GtkMaskedEntry *masked_entry = GTK_MASKED_ENTRY (user_data);
 	GtkMaskedEntryPrivate *priv = GTK_MASKED_ENTRY_GET_PRIVATE (masked_entry);
 
-	if ((event->keyval == GDK_Tab || event->keyval == GDK_ISO_Left_Tab)
+	if ((event->keyval == GDK_KEY_Tab || event->keyval == GDK_KEY_ISO_Left_Tab)
 		&& priv->tab_inside)
 		{
 			gint pos;
